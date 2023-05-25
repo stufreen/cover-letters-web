@@ -5,6 +5,7 @@ import { TargetedEvent } from "preact/compat";
 import { generateCoverLetter } from "./utilities/api";
 import "./JobForm.css";
 import { JobFormErrors, validateJobForm } from "./utilities/validateJobForm";
+import * as exampleData from "./example-data.json";
 
 interface Props {
   loading?: boolean;
@@ -13,13 +14,13 @@ interface Props {
 }
 
 export const JobForm = ({ loading, setResults, setLoading }: Props) => {
+  const [companyName, setCompanyName] = useState(exampleData.companyName);
   const [jobDescription, setJobDescription] = useState(
-    "Creating toys out of tires"
+    exampleData.jobDescription
   );
   const [qualifications, setQualifications] = useState(
-    "10 years building toys at SpinMaster out of recycled goods"
+    exampleData.qualifications
   );
-  const [companyName, setCompanyName] = useState("TestCo");
   const [formErrors, setFormErrors] = useState<JobFormErrors>({});
 
   const handleSubmit = async (e: TargetedEvent<HTMLFormElement, Event>) => {
