@@ -6,16 +6,14 @@ interface Props {
 }
 
 export const ResultsPanel = ({ results, loading }: Props) => {
-  return (
-    (results || loading) && (
-      <div className="results-panel">
-        <h2 className="results-panel--header">Result</h2>
-        {loading ? (
-          <span className="results-panel--loading">Loading...</span>
-        ) : (
-          <div>{results || "Fill out the form to generate"}</div>
-        )}
-      </div>
-    )
-  );
+  return results ? (
+    <div className="results-panel">
+      <h2 className="results-panel--header">Result</h2>
+      {loading ? (
+        <span className="results-panel--loading">Loading...</span>
+      ) : (
+        <div>{results || "Fill out the form to generate"}</div>
+      )}
+    </div>
+  ) : null;
 };
