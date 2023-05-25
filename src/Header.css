@@ -7,7 +7,10 @@
 }
 
 .header--text {
+  display: block;
   font-size: var(--font-size-3);
   padding: var(--spacing-3);
   margin: 0;
+  max-width: 50rem;
+  margin: 0 auto;
 }
