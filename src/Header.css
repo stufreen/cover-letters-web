@@ -1,0 +1,13 @@
+.header {
+  width: 100%;
+  border-bottom: 1px solid var(--border-light);
+  position: sticky;
+  background: var(--background);
+  top: 0;
+}
+
+.header--text {
+  font-size: var(--font-size-3);
+  padding: var(--spacing-3);
+  margin: 0;
+}

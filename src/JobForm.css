@@ -1,0 +1,29 @@
+.job-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--spacing-3);
+}
+
+.job-form--form {
+  width: 100%;
+}
+
+.job-form--submit {
+  background-color: var(--accent-background);
+  color: var(--accent-foreground);
+  font-weight: bold;
+}
+
+.job-form--submit:hover {
+  background-color: var(--accent-background-hover);
+}
+
+.job-form--submit:active {
+  background-color: var(--accent-background-pressed);
+}
+
+.job-form--submit:disabled {
+  background-color: var(--accent-background-disabled);
+}

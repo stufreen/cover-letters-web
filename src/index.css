@@ -1,4 +1,28 @@
 :root {
+  --border-light: rgb(230, 230, 230);
+  --text: rgb(30, 40, 50);
+  --text-subdued: rgb(80, 90, 100);
+  --background: white;
+  --error: rgb(218, 33, 0);
+  --accent-background: rgb(30, 68, 255);
+  --accent-background-hover: rgb(56, 89, 255);
+  --accent-background-pressed: rgb(12, 45, 213);
+  --accent-background-disabled: rgb(94, 107, 119);
+  --accent-foreground: white;
+  --spacing-0: 0.25rem;
+  --spacing-1: 0.5rem;
+  --spacing-2: 0.75rem;
+  --spacing-3: 1rem;
+  --spacing-4: 1.5rem;
+  --spacing-5: 2rem;
+  --font-size-1: 2.4rem;
+  --font-size-2: 1.9rem;
+  --font-size-3: 1.5rem;
+  --font-size-4: 1.2rem;
+  --font-size-5: 1rem;
+  --font-size-6: 0.85rem;
+  --letter-spacing-wide: 0.04em;
+
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -14,6 +38,10 @@
   -webkit-text-size-adjust: 100%;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -25,9 +53,6 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
   min-height: 100vh;
 }
 

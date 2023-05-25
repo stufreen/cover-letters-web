@@ -1,0 +1,26 @@
+.small-input--wrapper {
+  margin-bottom: var(--spacing-3);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.small-input--label {
+  font-size: var(--font-size-6);
+  text-transform: uppercase;
+  color: var(--text-subdued);
+  font-weight: bold;
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.small-input--input {
+  width: 10rem;
+  padding: var(--spacing-2);
+}
+
+.small-input--error {
+  color: var(--error);
+  font-size: var(--font-size-6);
+  font-weight: bold;
+  margin-bottom: var(--spacing-0);
+}

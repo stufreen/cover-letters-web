@@ -6,15 +6,22 @@ import { ResultsPanel } from "./ResultsPanel";
 
 export function App() {
   const [results, setResults] = useState<string>("");
+  const [loading, setLoading] = useState(false);
 
   return (
     <>
       <Header />
-      <aside>
-        <JobForm setResults={setResults} />
-      </aside>
-      <main>
-        <ResultsPanel results={results} />
+      <main className="main-panel">
+        <aside>
+          <JobForm
+            setResults={setResults}
+            setLoading={setLoading}
+            loading={loading}
+          />
+        </aside>
+        <section>
+          <ResultsPanel results={results} loading={loading} />
+        </section>
       </main>
     </>
   );

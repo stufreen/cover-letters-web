@@ -1,0 +1,28 @@
+.large-input--wrapper {
+  margin-bottom: var(--spacing-3);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.large-input--label {
+  font-size: var(--font-size-6);
+  text-transform: uppercase;
+  color: var(--text-subdued);
+  font-weight: bold;
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.large-input--textarea {
+  width: 100%;
+  height: 20em;
+  resize: vertical;
+  padding: var(--spacing-2);
+}
+
+.large-input--error {
+  color: var(--error);
+  font-size: var(--font-size-6);
+  font-weight: bold;
+  margin-bottom: var(--spacing-0);
+}
