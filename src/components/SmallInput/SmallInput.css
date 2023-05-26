@@ -17,6 +17,7 @@
 }
 
 .small-input--input {
+  appearance: none;
   width: 15rem;
   padding: var(--spacing-2) var(--spacing-3);
   font-size: 1rem;
