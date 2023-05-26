@@ -1,5 +1,7 @@
+import { useEffect } from "preact/hooks";
 import "./ResultsPanel.css";
 import classNames from "classnames";
+import { createRef } from "preact";
 
 interface Props {
   open: boolean;
@@ -9,6 +11,10 @@ interface Props {
 }
 
 export const ResultsPanel = ({ open, closePanel, results, loading }: Props) => {
+  const contentRef = createRef();
+  useEffect(() => {
+    contentRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [open]);
   return (
     <div
       className={classNames("results-panel", { "results-panel__open": open })}
@@ -18,7 +24,7 @@ export const ResultsPanel = ({ open, closePanel, results, loading }: Props) => {
         onClick={() => closePanel()}
       ></div>
       {open && (
-        <div className="results-panel--content">
+        <div className="results-panel--content" ref={contentRef}>
           <h2 className="results-panel--header">Result</h2>
           {loading && (
             <span className="results-panel--loading">Loading...</span>
