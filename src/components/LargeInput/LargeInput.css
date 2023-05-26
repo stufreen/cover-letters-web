@@ -12,6 +12,7 @@
   font-weight: bold;
   letter-spacing: var(--letter-spacing-wide);
   margin: var(--spacing-2) 0;
+  font-family: var(--font-family-heading);
 }
 
 .large-input--textarea {
