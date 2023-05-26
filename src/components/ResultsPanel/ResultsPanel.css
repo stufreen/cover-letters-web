@@ -78,3 +78,25 @@
 .results-panel--closer-button:active {
   background-color: var(--background-subdued);
 }
+
+@media only screen and (min-width: 900px) {
+  .results-panel {
+    opacity: 1;
+    pointer-events: all;
+    position: relative;
+    width: 50%;
+  }
+
+  .results-panel--overlay {
+    display: none;
+  }
+
+  .results-panel--content {
+    position: relative;
+    width: auto;
+  }
+
+  .results-panel--closer-button {
+    display: none;
+  }
+}

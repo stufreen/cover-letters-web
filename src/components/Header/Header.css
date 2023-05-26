@@ -1,0 +1,42 @@
+.header {
+  width: 100%;
+  background: var(--background);
+  top: 0;
+  padding: var(--spacing-4) var(--spacing-3) 0 var(--spacing-3);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.header--text {
+  display: block;
+  font-size: var(--font-size-1);
+  line-height: 1.1em;
+  margin: 0 0 var(--spacing-3) 0;
+}
+
+.header--body {
+  max-width: 30em;
+  font-size: var(--font-size-5);
+  color: var(--text-subdued);
+}
+
+.header--text__gradient {
+  background: var(--accent-background);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+
+.header--text__gradient svg {
+  height: 1em;
+  width: 1em;
+  display: inline;
+  vertical-align: baseline;
+  color: #ff416c;
+}
+
+@media only screen and (min-width: 900px) {
+  .header--text {
+    font-size: 5rem;
+  }
+}

@@ -14,6 +14,7 @@ export const generateCoverLetter = ({
   qualifications,
 }: GenerateCoverLetter) => {
   let utf8decoder = new TextDecoder();
+  let reader: ReadableStreamDefaultReader | null = null;
 
   fetch(import.meta.env.VITE_COVER_LETTER_API_ENDPOINT, {
     method: "POST",
@@ -25,7 +26,7 @@ export const generateCoverLetter = ({
   })
     .then(async (response) => {
       if (response.status === 200 && response.body) {
-        const reader = response.body.getReader();
+        reader = response.body.getReader();
 
         let responseString = "";
 
@@ -34,6 +35,8 @@ export const generateCoverLetter = ({
 
           if (done) {
             onDone();
+            reader.releaseLock();
+            reader = null;
             break;
           }
 
@@ -58,4 +61,12 @@ export const generateCoverLetter = ({
       console.error(e);
       onDone();
     });
+
+  return async () => {
+    if (reader) {
+      await reader.cancel();
+      return;
+    }
+    return Promise.resolve();
+  };
 };

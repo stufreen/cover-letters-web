@@ -7,4 +7,5 @@
 .footer p {
   margin: 0;
   font-size: var(--font-size-6);
+  font-family: var(--font-family-heading);
 }

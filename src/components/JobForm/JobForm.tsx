@@ -1,25 +1,21 @@
 import { useState } from "preact/hooks";
-import { LargeInput } from "./LargeInput";
-import { SmallInput } from "./SmallInput";
+import { LargeInput } from "../LargeInput";
+import { SmallInput } from "../SmallInput";
 import { TargetedEvent } from "preact/compat";
-import { generateCoverLetter } from "./utilities/api";
 import "./JobForm.css";
-import { JobFormErrors, validateJobForm } from "./utilities/validateJobForm";
-import * as exampleData from "./example-data.json";
+import {
+  JobFormErrors,
+  validateJobForm,
+} from "../../utilities/validateJobForm";
+import * as exampleData from "../../example-data.json";
+import { JobFormData } from "../../types";
 
 interface Props {
   loading?: boolean;
-  onSubmit?: () => void;
-  setResults: (results: string) => void;
-  setLoading: (loading: boolean) => void;
+  onSubmit?: (data: JobFormData) => void;
 }
 
-export const JobForm = ({
-  loading,
-  onSubmit,
-  setResults,
-  setLoading,
-}: Props) => {
+export const JobForm = ({ loading, onSubmit }: Props) => {
   const [companyName, setCompanyName] = useState(exampleData.companyName);
   const [jobDescription, setJobDescription] = useState(
     exampleData.jobDescription
@@ -41,17 +37,10 @@ export const JobForm = ({
     setFormErrors(validationResult.errors);
 
     if (validationResult.valid) {
-      setLoading(true);
-      onSubmit?.();
-      generateCoverLetter({
+      onSubmit?.({
         companyName,
         jobDescription,
         qualifications,
-        onUpdate: (result: string) => {
-          setResults(result);
-          setLoading(false);
-        },
-        onDone: () => setLoading(false),
       });
     }
   };

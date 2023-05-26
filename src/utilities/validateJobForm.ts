@@ -1,8 +1,4 @@
-interface ValidateJobForm {
-  companyName: string;
-  jobDescription: string;
-  qualifications: string;
-}
+import { JobFormData } from "../types";
 
 interface ValidateJobFormSuccess {
   valid: true;
@@ -26,7 +22,7 @@ export const validateJobForm = ({
   companyName,
   jobDescription,
   qualifications,
-}: ValidateJobForm): ValidateJobFormResult => {
+}: JobFormData): ValidateJobFormResult => {
   let result: any = { valid: true, errors: {} };
 
   if (companyName.length === 0) {
