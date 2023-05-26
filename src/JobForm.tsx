@@ -9,11 +9,17 @@ import * as exampleData from "./example-data.json";
 
 interface Props {
   loading?: boolean;
+  onSubmit?: () => void;
   setResults: (results: string) => void;
   setLoading: (loading: boolean) => void;
 }
 
-export const JobForm = ({ loading, setResults, setLoading }: Props) => {
+export const JobForm = ({
+  loading,
+  onSubmit,
+  setResults,
+  setLoading,
+}: Props) => {
   const [companyName, setCompanyName] = useState(exampleData.companyName);
   const [jobDescription, setJobDescription] = useState(
     exampleData.jobDescription
@@ -36,6 +42,7 @@ export const JobForm = ({ loading, setResults, setLoading }: Props) => {
 
     if (validationResult.valid) {
       setLoading(true);
+      onSubmit?.();
       generateCoverLetter({
         companyName,
         jobDescription,
@@ -50,8 +57,8 @@ export const JobForm = ({ loading, setResults, setLoading }: Props) => {
   };
 
   return (
-    <div className="job-form">
-      <form className="job-form--form" onSubmit={handleSubmit}>
+    <form className="job-form--form" onSubmit={handleSubmit}>
+      <div className="job-form">
         <SmallInput
           label="Company name"
           value={companyName}
@@ -70,10 +77,12 @@ export const JobForm = ({ loading, setResults, setLoading }: Props) => {
           handleChange={setQualifications}
           error={formErrors.qualifications}
         />
+      </div>
+      <div className="job-form--submit-area">
         <button type="submit" className="job-form--submit" disabled={loading}>
           Generate cover letter
         </button>
-      </form>
-    </div>
+      </div>
+    </form>
   );
 };

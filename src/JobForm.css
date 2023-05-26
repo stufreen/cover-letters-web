@@ -2,8 +2,9 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
   padding: var(--spacing-3);
+  padding-bottom: 0;
 }
 
 .job-form--form {
@@ -11,9 +12,11 @@
 }
 
 .job-form--submit {
-  background-color: var(--accent-background);
+  padding: var(--spacing-1) var(--spacing-2);
+  background: var(--accent-background);
   color: var(--accent-foreground);
   font-weight: bold;
+  box-shadow: var(--box-shadow-1);
 }
 
 .job-form--submit:hover {
@@ -26,4 +29,14 @@
 
 .job-form--submit:disabled {
   background-color: var(--accent-background-disabled);
+}
+
+.job-form--submit-area {
+  background-color: var(--background-subdued);
+  position: sticky;
+  bottom: 0;
+  padding: var(--spacing-2) var(--spacing-3);
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid var(--border-light);
 }

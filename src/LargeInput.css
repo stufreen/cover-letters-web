@@ -11,13 +11,21 @@
   color: var(--text-subdued);
   font-weight: bold;
   letter-spacing: var(--letter-spacing-wide);
+  margin: var(--spacing-2) 0;
 }
 
 .large-input--textarea {
   width: 100%;
   height: 20em;
   resize: vertical;
-  padding: var(--spacing-2);
+  padding: var(--spacing-3);
+  font-family: var(--font-family-body);
+  font-size: 1rem;
+  border: none;
+  box-shadow: var(--box-shadow-1);
+  border-radius: var(--border-radius-loose);
+  border-bottom-right-radius: 0;
+  color: var(--text);
 }
 
 .large-input--error {

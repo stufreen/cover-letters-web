@@ -1,35 +1,41 @@
 :root {
-  --border-light: rgb(230, 230, 230);
-  --text: rgb(30, 40, 50);
-  --text-subdued: rgb(80, 90, 100);
+  --text: rgb(44, 59, 83);
+  --text-subdued: rgb(93, 100, 117);
   --background: white;
+  --background-subdued: rgb(245, 246, 247);
   --error: rgb(218, 33, 0);
-  --accent-background: rgb(30, 68, 255);
+  --accent-background: linear-gradient(to right, #ff4b2b, #ff416c);
   --accent-background-hover: rgb(56, 89, 255);
   --accent-background-pressed: rgb(12, 45, 213);
-  --accent-background-disabled: rgb(94, 107, 119);
+  --accent-background-disabled: rgb(91, 119, 145);
   --accent-foreground: white;
   --spacing-0: 0.25rem;
   --spacing-1: 0.5rem;
-  --spacing-2: 0.75rem;
-  --spacing-3: 1rem;
-  --spacing-4: 1.5rem;
-  --spacing-5: 2rem;
+  --spacing-2: 0.85em;
+  --spacing-3: 1.4rem;
+  --spacing-4: 1.9rem;
+  --spacing-5: 2.6rem;
   --font-size-1: 2.4rem;
   --font-size-2: 1.9rem;
   --font-size-3: 1.5rem;
   --font-size-4: 1.2rem;
   --font-size-5: 1rem;
-  --font-size-6: 0.85rem;
-  --letter-spacing-wide: 0.04em;
+  --font-size-6: 0.8rem;
+  --letter-spacing-wide: 0.1em;
+  --font-family-body: "Nunito Sans", system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
+  --border-radius-tight: 0.2rem;
+  --border-radius-loose: 0.8rem;
+  --box-shadow-1: 0.25rem 0.25rem 0.8rem rgba(0, 0, 0, 0.15),
+    1px 1px 3px rgba(0, 0, 0, 0.05);
+  --border-light: rgb(230, 230, 230);
 
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: var(--font-family-body);
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: var(--text);
+  background-color: var(--background);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -56,11 +62,6 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -78,17 +79,4 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }

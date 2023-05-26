@@ -11,11 +11,18 @@
   color: var(--text-subdued);
   font-weight: bold;
   letter-spacing: var(--letter-spacing-wide);
+  margin: var(--spacing-2) 0;
 }
 
 .small-input--input {
-  width: 10rem;
-  padding: var(--spacing-2);
+  width: 15rem;
+  padding: var(--spacing-2) var(--spacing-3);
+  font-size: 1rem;
+  font-family: var(--font-family-body);
+  border: none;
+  box-shadow: var(--box-shadow-1);
+  border-radius: var(--border-radius-loose);
+  color: var(--text);
 }
 
 .small-input--error {

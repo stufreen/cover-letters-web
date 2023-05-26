@@ -1,0 +1,10 @@
+.footer {
+  background-color: var(--background-subdued);
+  padding: var(--spacing-2) var(--spacing-3);
+  text-align: center;
+}
+
+.footer p {
+  margin: 0;
+  font-size: var(--font-size-6);
+}
