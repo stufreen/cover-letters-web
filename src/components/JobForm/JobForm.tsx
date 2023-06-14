@@ -9,19 +9,22 @@ import {
 } from "../../utilities/validateJobForm";
 import * as exampleData from "../../example-data.json";
 import { JobFormData } from "../../types";
+import { loadFormState, saveFormState } from "../../utilities/persist";
 
 interface Props {
   loading?: boolean;
   onSubmit?: (data: JobFormData) => void;
 }
 
+const savedData = loadFormState() ?? exampleData;
+
 export const JobForm = ({ loading, onSubmit }: Props) => {
-  const [companyName, setCompanyName] = useState(exampleData.companyName);
+  const [companyName, setCompanyName] = useState(savedData.companyName);
   const [jobDescription, setJobDescription] = useState(
-    exampleData.jobDescription
+    savedData.jobDescription
   );
   const [qualifications, setQualifications] = useState(
-    exampleData.qualifications
+    savedData.qualifications
   );
   const [formErrors, setFormErrors] = useState<JobFormErrors>({});
 
@@ -38,6 +41,11 @@ export const JobForm = ({ loading, onSubmit }: Props) => {
 
     if (validationResult.valid) {
       onSubmit?.({
+        companyName,
+        jobDescription,
+        qualifications,
+      });
+      saveFormState({
         companyName,
         jobDescription,
         qualifications,
