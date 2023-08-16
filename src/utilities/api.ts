@@ -2,6 +2,8 @@ interface GenerateCoverLetter {
   companyName: string;
   jobDescription: string;
   qualifications: string;
+  tone: string;
+  length: string;
   onUpdate: (val: string) => void;
   onDone: () => void;
 }
@@ -12,13 +14,21 @@ export const generateCoverLetter = ({
   companyName,
   jobDescription,
   qualifications,
+  tone,
+  length,
 }: GenerateCoverLetter) => {
   let utf8decoder = new TextDecoder();
   let reader: ReadableStreamDefaultReader | null = null;
 
   fetch(import.meta.env.VITE_COVER_LETTER_API_ENDPOINT, {
     method: "POST",
-    body: JSON.stringify({ companyName, jobDescription, qualifications }),
+    body: JSON.stringify({
+      companyName,
+      jobDescription,
+      qualifications,
+      tone,
+      length,
+    }),
     headers: {
       "Content-Type": "application/json",
     },

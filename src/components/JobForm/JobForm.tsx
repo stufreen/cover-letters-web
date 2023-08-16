@@ -8,8 +8,9 @@ import {
   validateJobForm,
 } from "../../utilities/validateJobForm";
 import * as exampleData from "../../example-data.json";
-import { JobFormData } from "../../types";
+import { JobFormData, LENGTH_OPTIONS, TONE_OPTIONS } from "../../types";
 import { loadFormState, saveFormState } from "../../utilities/persist";
+import { Select } from "../Select";
 
 interface Props {
   loading?: boolean;
@@ -26,6 +27,8 @@ export const JobForm = ({ loading, onSubmit }: Props) => {
   const [qualifications, setQualifications] = useState(
     savedData.qualifications
   );
+  const [tone, setTone] = useState(savedData.tone ?? exampleData.tone);
+  const [length, setLength] = useState(savedData.length ?? exampleData.length);
   const [formErrors, setFormErrors] = useState<JobFormErrors>({});
 
   const handleSubmit = async (e: TargetedEvent<HTMLFormElement, Event>) => {
@@ -35,6 +38,8 @@ export const JobForm = ({ loading, onSubmit }: Props) => {
       companyName,
       jobDescription,
       qualifications,
+      tone,
+      length,
     });
 
     setFormErrors(validationResult.errors);
@@ -44,11 +49,15 @@ export const JobForm = ({ loading, onSubmit }: Props) => {
         companyName,
         jobDescription,
         qualifications,
+        tone,
+        length,
       });
       saveFormState({
         companyName,
         jobDescription,
         qualifications,
+        tone,
+        length,
       });
     }
   };
@@ -73,6 +82,20 @@ export const JobForm = ({ loading, onSubmit }: Props) => {
           value={qualifications}
           handleChange={setQualifications}
           error={formErrors.qualifications}
+        />
+        <Select
+          label="Tone"
+          value={tone}
+          options={TONE_OPTIONS}
+          handleChange={setTone}
+          error={formErrors.tone}
+        />
+        <Select
+          label="Length"
+          value={length}
+          options={LENGTH_OPTIONS}
+          handleChange={setLength}
+          error={formErrors.length}
         />
       </div>
       <div className="job-form--submit-area">

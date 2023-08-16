@@ -9,6 +9,8 @@ export interface JobFormErrors {
   companyName?: string;
   jobDescription?: string;
   qualifications?: string;
+  tone?: string;
+  length?: string;
 }
 
 interface ValidateJobFormFailure {

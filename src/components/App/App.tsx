@@ -18,6 +18,8 @@ export function App() {
     companyName,
     jobDescription,
     qualifications,
+    tone,
+    length,
   }: JobFormData) => {
     setLoading(true);
     setResultsOpen(true);
@@ -26,6 +28,8 @@ export function App() {
       companyName,
       jobDescription,
       qualifications,
+      tone,
+      length,
       onUpdate: (result: string) => {
         setResults(result);
         setLoading(false);

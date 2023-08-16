@@ -1,5 +1,7 @@
 {
   "companyName": "Acme Corporation",
   "jobDescription": "Acme is searching for it's newest Quality Control Supervisor to join the Anvil team. Responsibilities include:\n\n - Hammering anvils to make sure they're very strong\n\n - Weighing anvils to ensure they're the perfect weight\n\n - Tossing anvils off cliffs to catch wily coyotes",
-  "qualifications": "Experience\n\nToronto Metal Works\n2019-2023\n - Led a team of anvil engineers to create new anvil designs\n - Oversaw the successful release of new tiny anvil to market\n\nThe Anvil Co.\n2017-2019\n - Anvil engineer ensuring high quality products\n - Part of team building new anvil shapes"
+  "qualifications": "Experience\n\nToronto Metal Works\n2019-2023\n - Led a team of anvil engineers to create new anvil designs\n - Oversaw the successful release of new tiny anvil to market\n\nThe Anvil Co.\n2017-2019\n - Anvil engineer ensuring high quality products\n - Part of team building new anvil shapes",
+  "tone": "casual, clever and brief",
+  "length": "medium"
 }

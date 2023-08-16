@@ -1,0 +1,50 @@
+.select--wrapper {
+  margin-bottom: var(--spacing-3);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.select--label {
+  font-size: var(--font-size-6);
+  text-transform: uppercase;
+  color: var(--text-subdued);
+  font-weight: bold;
+  letter-spacing: var(--letter-spacing-wide);
+  margin: var(--spacing-2) 0;
+
+  font-family: var(--font-family-heading);
+}
+
+.select--input {
+  appearance: none;
+  width: 20rem;
+  padding: var(--spacing-2) var(--spacing-3);
+  font-size: 1rem;
+  font-family: var(--font-family-body);
+  border: none;
+  box-shadow: var(--box-shadow-1);
+  border-radius: var(--border-radius-loose);
+  color: var(--text);
+}
+
+.select--error {
+  color: var(--error);
+  font-size: var(--font-size-6);
+  font-weight: bold;
+  margin-bottom: var(--spacing-0);
+}
+
+.select--input-wrapper {
+  position: relative;
+}
+
+.select--arrow {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  pointer-events: none;
+  width: 30px;
+  height: 30px;
+  opacity: 0.8;
+}
