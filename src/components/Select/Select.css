@@ -26,6 +26,7 @@
   box-shadow: var(--box-shadow-1);
   border-radius: var(--border-radius-loose);
   color: var(--text);
+  background-color: white;
 }
 
 .select--error {
